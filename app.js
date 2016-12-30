@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
     var resultado = controller();
-    res.render(__dirname+'/public/index', {message: resultado});
+    res.render(__dirname+'/public/index', {message: "Férias!!"});
 
 });
 app.listen(port, function(){
