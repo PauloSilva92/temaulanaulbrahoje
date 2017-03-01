@@ -14,7 +14,7 @@ class Controller{
 
     confirmIsFeriado (){
         const currentDate = this.moment(new Date()).format("DD/MM/YYYY");
-        this.feriados.forEach(function(curr){
+        this.feriados.forEach((curr)=>{
             if (curr == currentDate ){
                 this.isFeriado  = true;
                 return;
@@ -22,10 +22,10 @@ class Controller{
         });
     }
 
-    confirmIsFerias (){
-        if(this.currentMonth == 12 || this.currentMonth == 1 || this.currentMonth == 2) return true;
-        return false;
-    }
+    // confirmIsFerias (){
+    //     if(this.currentMonth == 12 || this.currentMonth == 1 || this.currentMonth == 2) return true;
+    //     return false;
+    // }
 
     confirmIsWeekend (){
         if(this.currentDay == "Sunday" || this.currentDay == "Saturday") return true;
@@ -33,7 +33,7 @@ class Controller{
     }
 
     getResponse (){
-        if(this.confirmIsFerias()) return "Férias!!!"
+        // if(this.confirmIsFerias()) return "Férias!!!"
         if(this.isFeriado || this.confirmIsWeekend()) return "NÃO";
         return "SIM";
     };
